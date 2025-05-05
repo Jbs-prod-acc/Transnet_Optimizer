@@ -253,6 +253,17 @@
           <i class="fas fa-sliders-h me-2 text-primary"></i> OPTIMIZATION DASHBOARD | DATA REQUEST
         </h3>
 
+        <div class="mb-4">
+          <label for="fromDate" class="form-label fw-bold">From:</label>
+          <input type="date" id="fromDate" name="fromDate" class="form-control">
+        </div>
+        
+        <div class="mb-4">
+          <label for="toDate" class="form-label fw-bold">To:</label>
+          <input type="date" id="toDate" name="toDate" class="form-control">
+        </div>
+        
+
 
         <!-- Category Selection Dropdown -->
         <div class="mb-4">
@@ -267,42 +278,52 @@
         </div>
 
         <!-- Input Fields Container -->
-        <div class="row">
-          <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this)">
-            <label class="form-check-label fw-bold" for="selectAllCheckbox">
-              Select All
-            </label>
-          </div>
-          
+        <div class="row align-items-start">
           <!-- Available Fields -->
           <div class="col-md-6">
-            <h5>Available Fields</h5>
-            <em>Drag From this box</em>
-            <ul id="availableFields" class="list-group min-vh-50 border p-3" ondragover="allowDrop(event)"
-              ondrop="drop(event, 'availableFields')">
-              <!-- Dynamically populated -->
-            </ul>
+            <div class="border rounded p-3 bg-light d-flex flex-column h-100">
+              <h5>Available Fields</h5>
+              <em class="mb-2">Drag From this box</em>
+        
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this)">
+                <label class="form-check-label fw-bold" for="selectAllCheckbox">Select All</label>
+              </div>
+        
+              <ul id="availableFields" class="list-group flex-grow-1 mb-3 border" style="min-height: 200px;" ondragover="allowDrop(event)" ondrop="drop(event, 'availableFields')">
+                <!-- Populated dynamically -->
+              </ul>
+        
+              <button class="btn btn-sm btn-outline-primary mt-auto" onclick="dragSelected()">Drag Selected</button>
+            </div>
           </div>
-
+        
           <!-- Selected Fields -->
           <div class="col-md-6">
-            <h5>Selected Fields</h5>
-            <em>Paste into this box</em>
-            <ul id="selectedFields" class="list-group min-vh-50 border p-3" ondragover="allowDrop(event)"
-              ondrop="drop(event, 'selectedFields')">
-              <!-- User-selected fields will appear here -->
-            </ul>
+            <div class="border rounded p-3 bg-light d-flex flex-column h-100">
+              <h5>Selected Fields</h5>
+              <em class="mb-2">Paste into this box</em>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="unselectAllCheckbox" onchange="unselectAll(this)">
+
+                <label class="form-check-label fw-bold" for="selectAllCheckbox">Unselect All</label>
+              </div>
+              <ul id="selectedFields" class="list-group flex-grow-1 border" style="min-height: 200px;" ondragover="allowDrop(event)" ondrop="drop(event, 'selectedFields')">
+                <!-- User-selected fields will appear here -->
+              </ul>
+            </div>
           </div>
         </div>
+        
+        
 
             <!-- Optimization Button -->
             <div class="text-center mt-4 mb-5">
-              <button class="btn btn-lg btn-outline-danger px-5 py-2 shadow-sm" type="button"
-                onclick="runFuelOptimization()">
-                <i class="fas fa-gas-pump me-2"></i>Request Data from BI Administrator
+              <button class="btn btn-lg btn-primary px-5 py-2 shadow-sm" type="button">
+                <i class="fas fa-database me-2"></i>Submit Data Request to BI Administrator
               </button>
             </div>
+            
 
 
 
@@ -319,123 +340,133 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Define fields for each category
-    const categoryFields = {
-      routeOpt: ['Start Point',
-        'Destination',
-        'Corridor Capacity',
-        'Congestion Level',
-        'Route Length',
-        'Track Condition',
-        'Speed Limit',
-        'Clearance Restrictions',
-        'Locomotive Availability',
-        'Wagon Type Availability',
-        'Shunting Locomotive',
-        'Crew Availability',
-        'Fuel Efficiency',
-        'Refueling Station Access',
-        'Estimated Travel Time',
-        'Dwel Time Per Yard',
-        'Expected Turnaround Time',
-        'Historical Delay Probability',
-        'Load Type',
-        'Total load Tons',
-        'Axle Load Limits',
-        'Wagon utilization',
-        'Client Delievry Window',
-        'Weather Impact Forecast',
-      ],
-      cargoDist: ['Cargo Type',
-      'Cargo Volume',
-      'Cargo Weight',
-      'Special Handling Requirements',
-      'Preffered Route Corridor',
-      'Transhipment Required',
-      'Delievry Node',
-      'Receiving Facility',
-      'Daily Demands',
-      'Demand Peak Hours',
-      'Wagon Availability',
-      'Crane/Loader Units available',
-      'Manpower Allocation',
-      'Weather Delay Risk'
-      
-
-
-      ],
-      fuelWaste: [
-      'Daily Fuel Consumption',
-      'Fuel Cost Per litre',
-      'Average load Per Trip',
-      'Fuel Efficiency',
-      'Shunting Time Fuel Use',
-      'Fuel Type',
-      'CO2 Emmision Per Trip',
-      'NO2 Emmission pmm',
-      'Idle Time Emmision',
-      'Emmision Compliance',
+<!-- ✅ FIXED VERSION -->
+<script>
+  const categoryFields = {
+    routeOpt: [
+      'Start Point', 'Destination', 'Corridor Capacity', 'Congestion Level',
+      'Route Length', 'Track Condition', 'Speed Limit', 'Clearance Restrictions',
+      'Locomotive Availability', 'Wagon Type Availability', 'Shunting Locomotive',
+      'Crew Availability', 'Fuel Efficiency', 'Refueling Station Access',
+      'Estimated Travel Time', 'Dwel Time Per Yard', 'Expected Turnaround Time',
+      'Historical Delay Probability', 'Load Type', 'Total load Tons', 'Axle Load Limits',
+      'Wagon utilization', 'Client Delievry Window', 'Weather Impact Forecast'
+    ],
+    cargoDist: [
+      'Cargo Type', 'Cargo Volume', 'Cargo Weight', 'Special Handling Requirements',
+      'Preffered Route Corridor', 'Transhipment Required', 'Delievry Node', 'Receiving Facility',
+      'Daily Demands', 'Demand Peak Hours', 'Wagon Availability', 'Crane/Loader Units available',
+      'Manpower Allocation', 'Weather Delay Risk'
+    ],
+    fuelWaste: [
+      'Daily Fuel Consumption', 'Fuel Cost Per litre', 'Average load Per Trip',
+      'Fuel Efficiency', 'Shunting Time Fuel Use', 'Fuel Type', 'CO2 Emmision Per Trip',
+      'NO2 Emmission pmm', 'Idle Time Emmision', 'Emmision Compliance',
       'Emmision Monitoring Technology Used'
-      ],
-      fuelCargo: [
-        'Fuel Consumed (Litres)',
-      'Distance Travelled',
-      'Average Speed',
-      'Engine Type',
-      'Co2 Emitted (grams)',
-      'NO2 Emitted (grams)',
-      'Particular Matter',
-      'Emission Standard'
-      ]
-    };
+    ],
+    fuelCargo: [
+      'Fuel Consumed (Litres)', 'Distance Travelled', 'Average Speed',
+      'Engine Type', 'Co2 Emitted (grams)', 'NO2 Emitted (grams)',
+      'Particular Matter', 'Emission Standard'
+    ]
+  };
 
-    // Populate available fields based on selected category
-    document.getElementById('categorySelect').addEventListener('change', function () {
-      const selectedCategory = this.value;
-      const availableFields = document.getElementById('availableFields');
-      const selectedFields = document.getElementById('selectedFields');
+  document.getElementById('categorySelect').addEventListener('change', function () {
+    const selectedCategory = this.value;
+    const availableFields = document.getElementById('availableFields');
+    const selectedFields = document.getElementById('selectedFields');
 
-      // Clear existing fields
-      availableFields.innerHTML = '';
-      selectedFields.innerHTML = '';
+    availableFields.innerHTML = '';
+    selectedFields.innerHTML = '';
 
-      if (categoryFields[selectedCategory]) {
-        categoryFields[selectedCategory].forEach(field => {
-          const listItem = document.createElement('li');
-          listItem.textContent = field;
-          listItem.className = 'list-group-item';
-          listItem.draggable = true;
-          listItem.id = `field-${field.replace(/\s+/g, '-')}`;
-          listItem.addEventListener('dragstart', drag);
-          availableFields.appendChild(listItem);
-        });
+    if (categoryFields[selectedCategory]) {
+      categoryFields[selectedCategory].forEach((field, index) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+        listItem.id = `field-${field.replace(/\s+/g, '-')}-${index}`;
+        listItem.draggable = true;
+        listItem.addEventListener('dragstart', drag);
+
+        const labelSpan = document.createElement('span');
+        labelSpan.textContent = field;
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'form-check-input ms-2';
+        checkbox.dataset.fieldName = field;
+
+        listItem.appendChild(labelSpan);
+        listItem.appendChild(checkbox);
+        availableFields.appendChild(listItem);
+      });
+    }
+  });
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData('text', ev.target.id);
+  }
+
+  function drop(ev, targetId) {
+    ev.preventDefault();
+    const data = ev.dataTransfer.getData('text');
+    const draggedElement = document.getElementById(data);
+    const targetList = document.getElementById(targetId);
+
+    if (!Array.from(targetList.children).some(item => item.textContent.trim() === draggedElement.textContent.trim())) {
+      const clonedElement = draggedElement.cloneNode(true);
+      const checkbox = clonedElement.querySelector('input[type="checkbox"]');
+      if (checkbox) checkbox.remove();
+      clonedElement.addEventListener('dragstart', drag);
+      targetList.appendChild(clonedElement);
+    }
+  }
+
+  function toggleSelectAll(checkbox) {
+    const allCheckboxes = document.querySelectorAll('#availableFields input[type="checkbox"]');
+    allCheckboxes.forEach(cb => {
+      cb.checked = checkbox.checked;
+    });
+  }
+  function unselectAll(checkbox) {
+  const selectedFields = document.getElementById('selectedFields');
+  if (checkbox.checked) {
+    selectedFields.innerHTML = ''; // Clear all selected items
+    checkbox.checked = false; // Immediately uncheck to avoid confusion
+  }
+}
+
+
+  function dragSelected() {
+    const checkboxes = document.querySelectorAll('#availableFields input[type="checkbox"]:checked');
+    const selectedFields = document.getElementById('selectedFields');
+
+    checkboxes.forEach(cb => {
+      const fieldName = cb.dataset.fieldName;
+      const originalLi = cb.closest('li');
+
+      if (!originalLi || !fieldName) return;
+
+      const exists = Array.from(selectedFields.children).some(el =>
+        el.textContent.trim().startsWith(fieldName)
+      );
+
+      if (!exists) {
+        const cloned = originalLi.cloneNode(true);
+        const checkbox = cloned.querySelector('input[type="checkbox"]');
+        if (checkbox) checkbox.remove();
+        cloned.id = `${originalLi.id}-cloned-${Date.now()}`;
+        cloned.addEventListener('dragstart', drag);
+        selectedFields.appendChild(cloned);
       }
     });
+  }
+</script>
 
-    // Drag and Drop Functions
-    function allowDrop(ev) {
-      ev.preventDefault();
-    }
-
-    function drag(ev) {
-      ev.dataTransfer.setData('text', ev.target.id);
-    }
-
-    function drop(ev, targetId) {
-      ev.preventDefault();
-      const data = ev.dataTransfer.getData('text');
-      const draggedElement = document.getElementById(data);
-      const targetList = document.getElementById(targetId);
-
-      // Prevent duplicate entries
-      if (!Array.from(targetList.children).some(item => item.id === data)) {
-        const clonedElement = draggedElement.cloneNode(true);
-        clonedElement.addEventListener('dragstart', drag);
-        targetList.appendChild(clonedElement);
-      }
-    }
-  </script>
+  
 
 
 
