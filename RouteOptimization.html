@@ -218,194 +218,263 @@
       </div>
       
 
-      <!-- Main content -->
-      <div class="col-md-10 content">
 
-        <h3 class="dashboard-heading">
-          <i class="fas fa-sliders-h me-2 text-primary"></i> OPTIMIZATION DASHBOARD
-        </h3>
-        
-        
-        <div class="row text-white mb-3">
-          <div class="col-md-3">
-            <div class="card bg-primary p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-train card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">TRAINS IN TERMINAL</p>
-                  <h4>8</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-warning text-dark p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-box card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">WAGONS PROCESSING</p>
-                  <h4>143</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-danger p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-clock card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">AVG. DWELL TIME</p>
-                  <h4>210 min</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-success p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-tachometer-alt card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">THROUGHPUT TODAY</p>
-                  <h4>18 wagons/hr</h4>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- MAIN CONTENT SECTION START -->
+<div class="col-md-10 content">
+  <h3 class="dashboard-heading mb-4">
+    <i class="fas fa-sliders-h me-2 text-primary"></i> Optimization Dashboard | Route Optimization
+  </h3>
+
+  <h4 class="mt-4 mb-3 text-uppercase text-muted">
+    <i class="fas fa-chart-line me-2"></i> Optimization Results
+  </h4>
+  
+  <div class="row text-white mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary p-3 text-center">
+        <h6 class="mb-1">Optimal Route Score</h6>
+        <h4>82%</h4>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="card bg-success p-3 text-center">
+        <h6 class="mb-1">Cost per Ton-Km</h6>
+        <h4>R2.43</h4>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="card bg-warning p-3 text-center text-dark">
+        <h6 class="mb-1">Delay Risk Index</h6>
+        <h4>Low</h4>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="card bg-info p-3 text-center">
+        <h6 class="mb-1">Energy Use Efficiency</h6>
+        <h4>91%</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-danger p-3 text-center">
+        <h6 class="mb-1">Idle Hours</h6>
+        <h4>4.2 hrs</h4>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Input Section -->
+  <div class="row g-4 mb-5">
+  
+    <!-- Route & Corridor Parameters -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          🚦 Route & Corridor Parameters
         </div>
-
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header bg-primary text-white">Terminal Activity</div>
-              <div class="card-body p-2">
-                <div class="fixed-chart-container">
-                  <canvas id="terminalChart"></canvas>
-                </div>
-                
-              </div>
-              
-            </div>
-          </div>
-        
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header bg-warning">Resource Utilization</div>
-              <div class="card-body p-2">
-                <div class="fixed-chart-container">
-                  <canvas id="resourceChart"></canvas>
-                </div>
-                
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <br>
-
-        <div class="card">
-          <div class="card-header bg-danger text-white">Recent Alerts</div>
-          <div class="table-responsive">
-            <table class="table table-bordered mb-0">
-              <thead class="table-light">
-                <tr>
-                  <th>timestamp</th>
-                  <th>area</th>
-                  <th>alert_type</th>
-                  <th>message</th>
-                  <th>status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="status-active">
-                  <td>2025-05-01 10:15:32</td>
-                  <td>Inspection & Weighbridge</td>
-                  <td>Delay</td>
-                  <td>Weighbridge calibration delay, +15min to process</td>
-                  <td>Active</td>
-                </tr>
-                <tr class="status-active">
-                  <td>2025-05-01 09:47:18</td>
-                  <td>Loading / Unloading Line</td>
-                  <td>Equipment Issue</td>
-                  <td>Tippler hydraulic pressure below threshold</td>
-                  <td>Active</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-05-01 08:23:05</td>
-                  <td>Documentation & Seal Check</td>
-                  <td>System Down</td>
-                  <td>SAP Yard Logistics connectivity issues</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 17:12:44</td>
-                  <td>Reception Yard</td>
-                  <td>Safety Warning</td>
-                  <td>Brake test failed for wagon TRFR-87652</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                
-              </tbody>
-            </table>
-          </div>
+        <div class="card-body">
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Starting Point"></div>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Destination"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Corridor Capacity (tons/day)"></div>
+          <div class="mb-3"><select class="form-select"><option selected disabled>Congestion Level</option><option>Low</option><option>Moderate</option><option>High</option></select></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Route Length (km)"></div>
+          <div class="mb-3"><select class="form-select"><option selected disabled>Track Condition</option><option>Good</option><option>Moderate</option><option>Poor</option></select></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Speed Limit (km/h)"></div>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Clearance Restrictions (e.g. 4.2m H / 2.8m W)"></div>
         </div>
       </div>
+    </div>
+  
+    <!-- Asset & Fuel Metrics -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-secondary text-white">
+          🔋 Asset & Fuel Metrics
+        </div>
+        <div class="card-body">
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Locomotive Availability (e.g. 3 units available)"></div>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Wagon Type & Availability (e.g. Bulk - 14)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Shunting Locomotives Available"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Crew Available"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Fuel Efficiency (L/ton-km)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Fuel Tank Level (%)"></div>
+          <div class="mb-3"><select class="form-select"><option selected disabled>Refueling Station Access</option><option>Yes</option><option>No</option></select></div>
+        </div><br><br>
+      </div>
+    </div>
+  
+    <!-- Time & Efficiency -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+          ⏱ Time & Efficiency
+        </div>
+        <div class="card-body">
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Estimated Travel Time (hrs)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Dwell Time per Yard (min)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Expected Turnaround Time (hrs)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Historical Delay Probability (%)"></div>
+        </div><br><br><br><br><br>
+      </div>
+    </div>
+  
+    <!-- Load & Strategic Inputs -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+          📊 Load & Strategic Inputs
+        </div>
+        <div class="card-body">
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Load Type (e.g. Coal, Manganese)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Total Load (tons)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Axle Load Limit (tons)"></div>
+          <div class="mb-3"><input type="number" class="form-control" placeholder="Wagon Utilization (%)"></div>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Client Delivery Window (e.g. 2025-05-05 08:00–14:00)"></div>
+          <div class="mb-3"><select class="form-select"><option selected disabled>Weather Impact Forecast</option><option>None</option><option>Minor</option><option>Severe</option></select></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Results Section -->
+ 
+  <!-- Optimization Trigger Button -->
+<div class="text-center mt-4 mb-5">
+  <button class="btn btn-lg btn-outline-primary px-5 py-2 shadow-sm" type="button" onclick="runOptimization()">
+    <i class="fas fa-cogs me-2"></i>Run Optimization
+  </button>
+</div>
+
+
+<!-- Results Section -->
+
+<div class="table-responsive mb-5">
+  <h4 class="text-uppercase text-muted mb-4"><i class="fas fa-history me-2"></i>Historical Optimization Overview</h4>
+
+  <table class="table table-striped table-bordered align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>Date</th>
+        <th>Optimal Route Score (%)</th>
+        <th>Cost per Ton-Km (R)</th>
+        <th>Delay Risk Index</th>
+        <th>Energy Efficiency (%)</th>
+        <th>Idle Hours</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-05-01</td>
+        <td>82</td>
+        <td>2.43</td>
+        <td>Low</td>
+        <td>91</td>
+        <td>4.2</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Action
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Send to Operations</a></li>
+              <li><a class="dropdown-item" href="#">Save</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+              <li><a class="dropdown-item" href="#">Re-run Optimization</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>2025-04-29</td>
+        <td>79</td>
+        <td>2.61</td>
+        <td>Moderate</td>
+        <td>88</td>
+        <td>5.0</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Action
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Send to Operations</a></li>
+              <li><a class="dropdown-item" href="#">Save</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+              <li><a class="dropdown-item" href="#">Re-run Optimization</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>2025-04-27</td>
+        <td>85</td>
+        <td>2.35</td>
+        <td>Low</td>
+        <td>94</td>
+        <td>3.8</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Action
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Send to Operations</a></li>
+              <li><a class="dropdown-item" href="#">Save</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+              <li><a class="dropdown-item" href="#">Re-run Optimization</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+<!-- Historical Optimization Records -->
+<div class="mt-5">
+  
+  <div class="row">
+    <!-- Route Score Chart -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">Optimal Route Score (%)</div>
+        <div class="card-body">
+          <canvas id="routeScoreChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cost per Ton-Km Chart -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">Cost per Ton-Km (R)</div>
+        <div class="card-body">
+          <canvas id="costChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delay Risk Chart -->
+    <div class="col-md-12 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">Delay Risk Index</div>
+        <div class="card-body">
+          <canvas id="delayRiskChart" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+<!-- MAIN CONTENT SECTION END -->
+
     </div>
   </div>
 
@@ -461,6 +530,85 @@
     }
   });
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const labels = ['Apr 25', 'Apr 26', 'Apr 27', 'Apr 28', 'Apr 29', 'Apr 30', 'May 01'];
+
+    new Chart(document.getElementById('routeScoreChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Route Score',
+          data: [74, 78, 80, 77, 82, 81, 83],
+          borderColor: 'blue',
+          backgroundColor: 'rgba(0, 0, 255, 0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        plugins: {
+          title: { display: true, text: 'Route Score Over Time' },
+          legend: { display: false }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('costChart'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Cost (R)',
+          data: [2.65, 2.57, 2.50, 2.48, 2.46, 2.45, 2.43],
+          backgroundColor: 'green'
+        }]
+      },
+      options: {
+        plugins: {
+          title: { display: true, text: 'Cost Efficiency Trend' },
+          legend: { display: false }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('delayRiskChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Delay Risk',
+          data: [3, 2, 2, 2, 1, 1, 1],
+          borderColor: 'orange',
+          backgroundColor: 'rgba(255,165,0,0.3)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            ticks: {
+              callback: value => ['Low', 'Moderate', 'High'][value - 1],
+              stepSize: 1,
+              min: 1,
+              max: 3
+            }
+          }
+        },
+        plugins: {
+          title: { display: true, text: 'Delay Risk Trend' },
+          legend: { display: false }
+        }
+      }
+    });
+  });
+</script>
+
+
 
 </body>
 

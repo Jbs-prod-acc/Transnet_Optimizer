@@ -4,9 +4,11 @@ body {
   }
 
   .sidebar {
-    background-color: rgba(0, 255, 145, 0.401);
+    background-color: black;
     color: white;
-    height: 100vh;
+    min-height: 100vh; 
+    height: auto;
+    overflow-y: auto; 
   }
 
   .sidebar a {
@@ -42,7 +44,7 @@ body {
   
   .sidebar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #ffc107 !important; /* Example: Bootstrap warning yellow */
+    color: #ffc107 !important; 
   }
 
   .sidebar .nav-link.active {
@@ -51,7 +53,41 @@ body {
   }
 
 
-
+  footer a.text-white:hover {
+    color: #ffc107;
+    text-decoration: underline;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #007bff !important;
+  }
+  
+  .fixed-chart-container {
+    height: 300px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .fixed-chart-container canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  
+  .dashboard-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-left: 6px solid #0d6efd;
+    background-color: #f8f9fa;
+    color: #333;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
 
   @media (max-width: 768px) {
     .sidebar {

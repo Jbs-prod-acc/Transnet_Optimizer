@@ -222,189 +222,16 @@
       <div class="col-md-10 content">
 
         <h3 class="dashboard-heading">
-          <i class="fas fa-sliders-h me-2 text-primary"></i> OPTIMIZATION DASHBOARD
+          <i class="fas fa-sliders-h me-2 text-primary"></i> OPTIMIZATION DASHBOARD | DATA REQUEST
         </h3>
         
         
-        <div class="row text-white mb-3">
-          <div class="col-md-3">
-            <div class="card bg-primary p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-train card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">TRAINS IN TERMINAL</p>
-                  <h4>8</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-warning text-dark p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-box card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">WAGONS PROCESSING</p>
-                  <h4>143</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-danger p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-clock card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">AVG. DWELL TIME</p>
-                  <h4>210 min</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card bg-success p-3">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-tachometer-alt card-icon me-3"></i>
-                <div>
-                  <p class="mb-0">THROUGHPUT TODAY</p>
-                  <h4>18 wagons/hr</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header bg-primary text-white">Terminal Activity</div>
-              <div class="card-body p-2">
-                <div class="fixed-chart-container">
-                  <canvas id="terminalChart"></canvas>
-                </div>
-                
-              </div>
-              
-            </div>
-          </div>
-        
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header bg-warning">Resource Utilization</div>
-              <div class="card-body p-2">
-                <div class="fixed-chart-container">
-                  <canvas id="resourceChart"></canvas>
-                </div>
-                
-              </div>
-              
-            </div>
-          </div>
-        </div>
+       
         <br>
 
-        <div class="card">
-          <div class="card-header bg-danger text-white">Recent Alerts</div>
-          <div class="table-responsive">
-            <table class="table table-bordered mb-0">
-              <thead class="table-light">
-                <tr>
-                  <th>timestamp</th>
-                  <th>area</th>
-                  <th>alert_type</th>
-                  <th>message</th>
-                  <th>status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="status-active">
-                  <td>2025-05-01 10:15:32</td>
-                  <td>Inspection & Weighbridge</td>
-                  <td>Delay</td>
-                  <td>Weighbridge calibration delay, +15min to process</td>
-                  <td>Active</td>
-                </tr>
-                <tr class="status-active">
-                  <td>2025-05-01 09:47:18</td>
-                  <td>Loading / Unloading Line</td>
-                  <td>Equipment Issue</td>
-                  <td>Tippler hydraulic pressure below threshold</td>
-                  <td>Active</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-05-01 08:23:05</td>
-                  <td>Documentation & Seal Check</td>
-                  <td>System Down</td>
-                  <td>SAP Yard Logistics connectivity issues</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 17:12:44</td>
-                  <td>Reception Yard</td>
-                  <td>Safety Warning</td>
-                  <td>Brake test failed for wagon TRFR-87652</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                <tr class="status-resolved">
-                  <td>2025-04-30 15:35:21</td>
-                  <td>Departure Yard</td>
-                  <td>Process Violation</td>
-                  <td>Departure clearance issued before documentation complete</td>
-                  <td>Resolved</td>
-                </tr>
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -413,54 +240,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-  const terminalCtx = document.getElementById('terminalChart');
-  const terminalChart = new Chart(terminalCtx, {
-    type: 'line',
-    data: {
-      labels: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00'],
-      datasets: [
-        { label: 'Reception', data: [15, 18, 12, 13, 14, 10] },
-        { label: 'Inspection', data: [12, 11, 13, 15, 16, 14] },
-        { label: 'Loading', data: [9, 8, 10, 12, 11, 13] },
-        { label: 'Documentation', data: [10, 12, 15, 9, 8, 11] },
-        { label: 'Departure', data: [11, 14, 15, 10, 9, 12] }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
 
-  const resourceCtx = document.getElementById('resourceChart');
-  const resourceChart = new Chart(resourceCtx, {
-    type: 'bar',
-    data: {
-      labels: ['Staff', 'Tippler', 'Shunt Loco', 'Crane', 'Weighbridge'],
-      datasets: [{
-        label: 'Utilization (%)',
-        data: [85, 82, 75, 70, 60],
-        backgroundColor: 'rgba(54, 162, 235, 0.5)'
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          beginAtZero: true,
-          max: 100
-        }
-      }
-    }
-  });
-</script>
 
 </body>
 
