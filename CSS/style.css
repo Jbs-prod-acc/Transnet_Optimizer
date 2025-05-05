@@ -1,0 +1,83 @@
+
+body {
+    background-color: #f0f2f5;
+  }
+
+  .sidebar {
+    background-color: rgba(0, 255, 145, 0.401);
+    color: white;
+    height: 100vh;
+  }
+
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .status-active {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .status-resolved {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+
+  .sidebar .nav-link {
+    color: white !important;
+    padding-left: 0.5rem;
+    transition: background-color 0.2s ease;
+    
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffc107 !important; /* Example: Bootstrap warning yellow */
+  }
+
+  .sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: white !important;
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+      background-color: rgba(0, 149, 255, 0.358);
+      
+    }
+  
+    .sidebar ul.nav {
+      margin-top: 1rem;
+    }
+  
+    .sidebar .nav-link {
+      color: rgba(255, 255, 255, 0.364) !important;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+  
+    .sidebar .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffc107 !important;
+    }
+  }
+  
+  
+  
