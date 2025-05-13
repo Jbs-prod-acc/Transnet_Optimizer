@@ -14,7 +14,7 @@
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="IMAGES/Transnet-Logo.png" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
 
@@ -27,7 +27,7 @@
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
           <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+              class="fas fa-chart-line me-1 text-dark"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="#"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -54,7 +54,8 @@
     <div class="row">
       <!-- Sidebar -->
       <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
+        <h5 style="color: rgb(145, 145, 6); text-align: center;">Transnet Freight Rail</h5>
+
 
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
@@ -242,25 +243,25 @@
 
         <div class="row text-white mb-4">
           <div class="col-md-3">
-            <div class="card bg-success p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Fuel Efficiency</h6>
               <h4>6.2 km/l</h4>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card bg-info p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">CO₂ Emissions</h6>
               <h4>85 g/km</h4>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card bg-warning p-3 text-center text-dark">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Idle Time</h6>
               <h4>12%</h4>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card bg-danger p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Fuel Wasted</h6>
               <h4>9%</h4>
             </div>
@@ -271,7 +272,7 @@
         <div class="row g-4 mb-5">
           <div class="col-md-6">
             <div class="card shadow-sm">
-              <div class="card-header bg-success text-white">⛽ Fuel Usage Parameters</div>
+              <div class="card-header custom-red text-white">⛽ Fuel Usage Parameters</div>
               <div class="card-body">
                 <input type="number" class="form-control mb-3" placeholder="Fuel Consumed (liters)">
                 <input type="number" class="form-control mb-3" placeholder="Distance Traveled (km)">
@@ -301,7 +302,7 @@
 
         <!-- Optimization Action -->
         <div class="text-center mt-4 mb-5">
-          <button class="btn btn-lg btn-outline-success px-5 py-2 shadow-sm" type="button">
+          <button class="btn btn-lg btn-outline-secondary px-5 py-2 shadow-sm" type="button">
             <i class="fas fa-leaf me-2"></i>Run Fuel & Emissions Optimization
           </button>
         </div>
@@ -314,27 +315,27 @@
         <div class="mb-4">
           <div class="card shadow-sm">
             <div class="card-header bg-white border-bottom d-flex align-items-center">
-              <i class="fas fa-info-circle text-primary me-2"></i>
+              <i class="fas fa-info-circle text-secondary me-2"></i>
               <h6 class="mb-0 text-muted">Optimization Method Legend</h6>
             </div>
             <div class="card-body">
               <div class="row gy-2">
                 <div class="col-md-6">
-                  <span class="badge bg-primary me-2">DL</span>
+                  <span class="badge custom-red me-2">DL</span>
                   <strong>Deep Learning</strong> – Neural networks used for predictive and prescriptive analytics.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-success me-2">GA</span>
+                  <span class="badge custom-red  me-2">GA</span>
                   <strong>Genetic Algorithm</strong> – Heuristic search based on natural selection to find optimal
                   routes.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-warning text-dark me-2">MILP</span>
+                  <span class="badge custom-red text-white me-2">MILP</span>
                   <strong>Mixed-Integer Linear Programming</strong> – Mathematical approach for constrained
                   optimization.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-info text-dark me-2">OR Tools</span>
+                  <span class="badge custom-red me-2">OR Tools</span>
                   <strong>Operations Research Tools</strong> – Google's solver suite for routing, scheduling, and more.
                 </div>
               </div>
@@ -517,7 +518,7 @@
           <!-- Fuel Efficiency -->
           <div class="col-md-6 mb-4">
             <div class="card shadow-sm">
-              <div class="card-header bg-success text-white">Fuel Efficiency (km/l)</div>
+              <div class="card-header custom-red text-white">Fuel Efficiency (km/l)</div>
               <div class="card-body">
                 <canvas id="fuelEfficiencyChart" height="200"></canvas>
               </div>
@@ -527,7 +528,7 @@
           <!-- CO2 Emissions -->
           <div class="col-md-6 mb-4">
             <div class="card shadow-sm">
-              <div class="card-header bg-danger text-white">CO₂ Emissions (g/km)</div>
+              <div class="card-header bg-secondary text-white">CO₂ Emissions (g/km)</div>
               <div class="card-body">
                 <canvas id="co2EmissionChart" height="200"></canvas>
               </div>
@@ -537,7 +538,7 @@
           <!-- Idle Time -->
           <div class="col-md-6 mb-4">
             <div class="card shadow-sm">
-              <div class="card-header bg-warning text-dark">Idle Time (%)</div>
+              <div class="card-header custom-red">Idle Time (%)</div>
               <div class="card-body">
                 <canvas id="idleTimeChart" height="200"></canvas>
               </div>
@@ -547,7 +548,7 @@
           <!-- Fuel Wasted -->
           <div class="col-md-6 mb-4">
             <div class="card shadow-sm">
-              <div class="card-header bg-info text-dark">Fuel Wasted (%)</div>
+              <div class="card-header bg-secondary text-white">Fuel Wasted (%)</div>
               <div class="card-body">
                 <canvas id="fuelWastedChart" height="200"></canvas>
               </div>
@@ -576,8 +577,8 @@
         datasets: [{
           label: 'km/l',
           data: [2.8, 3.1, 2.9, 3.2, 3.0, 3.3],
-          borderColor: '#28a745',
-          backgroundColor: 'rgba(40, 167, 69, 0.2)',
+          borderColor: 'lightgrey',
+          backgroundColor: 'lightgrey',
           tension: 0.3,
           fill: true
         }]
@@ -598,8 +599,8 @@
         datasets: [{
           label: 'g/km',
           data: [95, 90, 92, 88, 91, 87],
-          borderColor: '#dc3545',
-          backgroundColor: 'rgba(220, 53, 69, 0.3)',
+          borderColor: '#a10d00',
+          backgroundColor: '#a10d00',
           tension: 0.4,
           fill: true
         }]
@@ -620,7 +621,7 @@
         datasets: [{
           label: 'Idle Time (%)',
           data: [12, 14, 11, 10, 9, 8],
-          backgroundColor: '#ffc107'
+          backgroundColor: 'lightgrey'
         }]
       },
       options: {
@@ -639,8 +640,8 @@
         datasets: [{
           label: 'Fuel Wasted (%)',
           data: [6, 5.5, 5.2, 4.8, 4.5, 4.3],
-          borderColor: '#17a2b8',
-          backgroundColor: 'rgba(23, 162, 184, 0.2)',
+          borderColor: '#a10d00',
+          backgroundColor: '#a10d00',
           fill: true,
           tension: 0.4
         }]

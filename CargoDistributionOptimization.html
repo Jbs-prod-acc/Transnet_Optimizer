@@ -14,7 +14,7 @@
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="IMAGES/Transnet-Logo.png" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
 
@@ -27,7 +27,7 @@
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
           <a class="nav-link text-dark fw-semibold" href="index.html"><i
-              class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+              class="fas fa-chart-line me-1 text-dark"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="#"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -54,7 +54,8 @@
     <div class="row">
       <!-- Sidebar -->
       <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
+        <h5 style="color: rgb(145, 145, 6); text-align: center;">Transnet Freight Rail</h5>
+
 
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
@@ -236,7 +237,7 @@
       <!-- Cargo Distribution Optimization Section -->
       <div class="col-md-10 content">
         <h3 class="dashboard-heading mb-4">
-          <i class="fas fa-boxes me-2 text-primary"></i> OPTIMIZATION DASHBOARD | ROUTE OPTIMIZATION | CARGO DISTRIBUTION
+          <i class="fas fa-boxes me-2 text-success"></i> OPTIMIZATION DASHBOARD | ROUTE OPTIMIZATION | CARGO DISTRIBUTION
         </h3>
 
 
@@ -244,31 +245,31 @@
 
         <div class="row text-white mb-4">
           <div class="col-md-3">
-            <div class="card bg-primary p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Distribution Efficiency</h6>
               <h4>89%</h4>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="card bg-success p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Average Load per Wagon</h6>
               <h4>45 Tons</h4>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="card bg-warning p-3 text-center text-dark">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Cargo Matching Accuracy</h6>
               <h4>94%</h4>
             </div>
           </div>
           <div class="col-md-2">
-            <div class="card bg-info p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Route Utilization</h6>
               <h4>87%</h4>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="card bg-danger p-3 text-center">
+            <div class="card custom-red p-3 text-center">
               <h6 class="mb-1">Unutilized Capacity</h6>
               <h4>8%</h4>
             </div>
@@ -284,7 +285,7 @@
           <!-- Distribution Parameters -->
           <div class="col-md-6">
             <div class="card shadow-sm">
-              <div class="card-header bg-primary text-white">
+              <div class="card-header custom-red text-white">
                 🛋️ Cargo Attributes
               </div>
               <div class="card-body">
@@ -321,7 +322,7 @@
           <!-- Timelines & Demand -->
           <div class="col-md-6">
             <div class="card shadow-sm">
-              <div class="card-header bg-info text-white">
+              <div class="card-header custom-red text-white">
                 ⏰ Timeline & Demand Forecast
               </div>
               <div class="card-body">
@@ -339,7 +340,7 @@
           <!-- Resource Constraints -->
           <div class="col-md-6">
             <div class="card shadow-sm">
-              <div class="card-header bg-warning text-dark">
+              <div class="card-header bg-secondary text-white">
                 🏛️ Resource Constraints
               </div>
               <div class="card-body">
@@ -366,25 +367,25 @@
         <div class="mb-4">
           <div class="card shadow-sm">
             <div class="card-header bg-white border-bottom d-flex align-items-center">
-              <i class="fas fa-info-circle text-primary me-2"></i>
+              <i class="fas fa-info-circle text-secondary me-2"></i>
               <h6 class="mb-0 text-muted">Optimization Method Legend</h6>
             </div>
             <div class="card-body">
               <div class="row gy-2">
                 <div class="col-md-6">
-                  <span class="badge bg-primary me-2">DL</span>
+                  <span class="badge custom-red me-2">DL</span>
                   <strong>Deep Learning</strong> – Neural networks used for predictive and prescriptive analytics.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-success me-2">GA</span>
+                  <span class="badge custom-red me-2">GA</span>
                   <strong>Genetic Algorithm</strong> – Heuristic search based on natural selection to find optimal routes.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-warning text-dark me-2">MILP</span>
+                  <span class="badge custom-red text-white me-2">MILP</span>
                   <strong>Mixed-Integer Linear Programming</strong> – Mathematical approach for constrained optimization.
                 </div>
                 <div class="col-md-6">
-                  <span class="badge bg-info text-dark me-2">OR Tools</span>
+                  <span class="badge custom-red text-white me-2">OR Tools</span>
                   <strong>Operations Research Tools</strong> – Google's solver suite for routing, scheduling, and more.
                 </div>
               </div>
@@ -394,7 +395,7 @@
 
            <!--Optimized Results-->
            <h4 class="text-uppercase text-muted mb-4" style="text-decoration: underline;">
-            <i class="fas fa-brain me-2 text-primary"></i>Complete Results from the Different Optimizers
+            <i class="fas fa-brain me-2 text-succ"></i>Complete Results from the Different Optimizers
           </h4>
           
         <table class="table table-striped table-bordered align-middle">
@@ -585,7 +586,7 @@
   <!-- Distribution Efficiency Trend -->
   <div class="col-md-6 mb-4">
     <div class="card shadow-sm">
-      <div class="card-header bg-primary text-white">Distribution Efficiency Trend (%)</div>
+      <div class="card-header custom-red text-white">Distribution Efficiency Trend (%)</div>
       <div class="card-body">
         <canvas id="distributionEfficiencyChart" height="200"></canvas>
       </div>
@@ -595,7 +596,7 @@
   <!-- Load Per Wagon Chart -->
   <div class="col-md-6 mb-4">
     <div class="card shadow-sm">
-      <div class="card-header bg-success text-white">Average Load Per Wagon (Tons)</div>
+      <div class="card-header bg-secondary text-white">Average Load Per Wagon (Tons)</div>
       <div class="card-body">
         <canvas id="loadPerWagonChart" height="200"></canvas>
       </div>
@@ -605,7 +606,7 @@
   <!-- Unutilized Capacity Chart -->
   <div class="col-md-6 mb-4">
     <div class="card shadow-sm">
-      <div class="card-header bg-danger text-white">Unutilized Capacity (Tons)</div>
+      <div class="card-header custom-red text-white">Unutilized Capacity (Tons)</div>
       <div class="card-body">
         <canvas id="unutilizedCapacityChart" height="200"></canvas>
       </div>
@@ -615,7 +616,7 @@
   <!-- Turnaround Time Chart -->
   <div class="col-md-6 mb-4">
     <div class="card shadow-sm">
-      <div class="card-header bg-warning text-dark">Turnaround Time (Hours)</div>
+      <div class="card-header bg-secondary text-white">Turnaround Time (Hours)</div>
       <div class="card-body">
         <canvas id="turnaroundTimeChart" height="200"></canvas>
       </div>
@@ -653,8 +654,8 @@
           datasets: [{
             label: 'Efficiency (%)',
             data: [90, 81, 87],
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+            borderColor: 'lightgrey',
+            backgroundColor: 'lightgrey',
             fill: true,
             tension: 0.4
           }]
@@ -674,7 +675,7 @@
           datasets: [{
             label: 'Tons',
             data: [56.3, 51.0, 54.2],
-            backgroundColor: 'green'
+            backgroundColor: '#a10d00'
           }]
         },
         options: {
@@ -692,7 +693,7 @@
           datasets: [{
             label: 'Unutilized (Tons)',
             data: [12.0, 20.8, 16.5],
-            backgroundColor: '#dc3545'
+            backgroundColor: 'lightgrey'
           }]
         },
         options: {
@@ -710,8 +711,8 @@
           datasets: [{
             label: 'Turnaround Time (hrs)',
             data: [7.5, 9.1, 8.4],
-            borderColor: '#ffc107',
-            backgroundColor: 'rgba(255, 193, 7, 0.2)',
+            borderColor: '#a10d00',
+            backgroundColor: '#a10d00',
             fill: true,
             tension: 0.4
           }]

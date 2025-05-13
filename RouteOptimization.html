@@ -14,7 +14,7 @@
 
   <header class="navbar navbar-expand-lg bg-white shadow-sm px-4 py-2">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="IMAGES/Transnet-Logo.jpg" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
+      <img src="IMAGES/Transnet-Logo.png" alt="Transnet Logo" style="height: 50px; margin-right: 15px;">
       <span class="fw-bold text-dark text-uppercase fs-5" style="line-height: 1.2;">Transnet<br>Freight Rail</span>
     </a>
   
@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarTopMenu">
       <ul class="navbar-nav align-items-center">
         <li class="nav-item">
-          <a class="nav-link text-dark fw-semibold" href="index.html"><i class="fas fa-chart-line me-1 text-primary"></i>Dashboard</a>
+          <a class="nav-link text-dark fw-semibold" href="index.html"><i class="fas fa-chart-line me-1 text-dark"></i>Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="#"><i class="fas fa-cogs me-1"></i>Settings</a>
@@ -52,7 +52,8 @@
     <div class="row">
       <!-- Sidebar -->
       <div class="col-12 col-md-2 sidebar p-3">
-        <h5 class="text-white">Transnet Freight Rail</h5>
+       <h5 style="color: rgb(145, 145, 6); text-align: center;">Transnet Freight Rail</h5>
+
       
         <ul class="nav flex-column mt-3">
           <li class="nav-item">
@@ -222,37 +223,37 @@
     <!-- MAIN CONTENT SECTION START -->
 <div class="col-md-10 content">
   <h3 class="dashboard-heading mb-4">
-    <i class="fas fa-sliders-h me-2 text-primary"></i> OPTIMIZATION DASHBOARD | ROUTE OPTIMIZATION
+    <i class="fas fa-sliders-h me-2 text-success"></i> OPTIMIZATION DASHBOARD | ROUTE OPTIMIZATION
   </h3>
 
   
   <div class="row text-white mb-4">
     <div class="col-md-3">
-      <div class="card bg-primary p-3 text-center">
+      <div class="card custom-red p-3 text-center">
         <h6 class="mb-1">Optimal Route Score</h6>
         <h4>82%</h4>
       </div>
     </div>
     <div class="col-md-2">
-      <div class="card bg-success p-3 text-center">
+      <div class="card custom-red p-3 text-center">
         <h6 class="mb-1">Cost per Ton-Km</h6>
         <h4>R2.43</h4>
       </div>
     </div>
     <div class="col-md-2">
-      <div class="card bg-warning p-3 text-center text-dark">
+      <div class="card custom-red p-3 text-center">
         <h6 class="mb-1">Delay Risk Index</h6>
         <h4>Low</h4>
       </div>
     </div>
     <div class="col-md-2">
-      <div class="card bg-info p-3 text-center">
+      <div class="card custom-red p-3 text-center">
         <h6 class="mb-1">Energy Use Efficiency</h6>
         <h4>91%</h4>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card bg-danger p-3 text-center">
+      <div class="card custom-red p-3 text-center">
         <h6 class="mb-1">Idle Hours</h6>
         <h4>4.2 hrs</h4>
       </div>
@@ -265,7 +266,7 @@
     <!-- Route & Corridor Parameters -->
     <div class="col-md-6">
       <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header custom-red text-white">
           🚦 Route & Corridor Parameters
         </div>
         <div class="card-body">
@@ -302,7 +303,7 @@
     <!-- Time & Efficiency -->
     <div class="col-md-6">
       <div class="card shadow-sm">
-        <div class="card-header bg-info text-white">
+        <div class="card-header custom-red text-white">
           ⏱ Time & Efficiency
         </div>
         <div class="card-body">
@@ -317,7 +318,7 @@
     <!-- Load & Strategic Inputs -->
     <div class="col-md-6">
       <div class="card shadow-sm">
-        <div class="card-header bg-warning text-dark">
+        <div class="card-header bg-secondary text-white">
           📊 Load & Strategic Inputs
         </div>
         <div class="card-body">
@@ -336,7 +337,7 @@
  
   <!-- Optimization Trigger Button -->
 <div class="text-center mt-4 mb-5">
-  <button class="btn btn-lg btn-outline-primary px-5 py-2 shadow-sm" type="button" onclick="runOptimization()">
+  <button class="btn btn-lg btn-outline-secondary px-5 py-2 shadow-sm" type="button" onclick="runOptimization()">
     <i class="fas fa-cogs me-2"></i>Run Route Optimization
   </button>
 </div>
@@ -346,32 +347,32 @@
 
    <!--Optimized Results-->
    <h4 class="text-uppercase text-muted mb-4" style="text-decoration: underline;">
-    <i class="fas fa-brain me-2 text-primary"></i>Complete Results from the Different Optimizers
+    <i class="fas fa-brain me-2 text-success"></i>Complete Results from the Different Optimizers
   </h4>
 
   <!-- Optimizer Legend Section -->
 <div class="mb-4">
   <div class="card shadow-sm">
     <div class="card-header bg-white border-bottom d-flex align-items-center">
-      <i class="fas fa-info-circle text-primary me-2"></i>
+      <i class="fas fa-info-circle text-secondary me-2"></i>
       <h6 class="mb-0 text-muted">Optimization Method Legend</h6>
     </div>
     <div class="card-body">
       <div class="row gy-2">
         <div class="col-md-6">
-          <span class="badge bg-primary me-2">DL</span>
+          <span class="badge custom-red me-2">DL</span>
           <strong>Deep Learning</strong> – Neural networks used for predictive and prescriptive analytics.
         </div>
         <div class="col-md-6">
-          <span class="badge bg-success me-2">GA</span>
+          <span class="badge custom-red me-2">GA</span>
           <strong>Genetic Algorithm</strong> – Heuristic search based on natural selection to find optimal routes.
         </div>
         <div class="col-md-6">
-          <span class="badge bg-warning text-dark me-2">MILP</span>
+          <span class="badge custom-red me-2">MILP</span>
           <strong>Mixed-Integer Linear Programming</strong> – Mathematical approach for constrained optimization.
         </div>
         <div class="col-md-6">
-          <span class="badge bg-info text-dark me-2">OR Tools</span>
+          <span class="badge custom-red me-2">OR Tools</span>
           <strong>Operations Research Tools</strong> – Google's solver suite for routing, scheduling, and more.
         </div>
       </div>
@@ -580,7 +581,7 @@
     <!-- Route Score Chart -->
     <div class="col-md-6 mb-4">
       <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">Optimal Route Score (%)</div>
+        <div class="card-header custom-red text-white">Optimal Route Score (%)</div>
         <div class="card-body">
           <canvas id="routeScoreChart" height="200"></canvas>
         </div>
@@ -590,7 +591,7 @@
     <!-- Cost per Ton-Km Chart -->
     <div class="col-md-6 mb-4">
       <div class="card shadow-sm">
-        <div class="card-header bg-success text-white">Cost per Ton-Km (R)</div>
+        <div class="card-header bg-secondary text-white">Cost per Ton-Km (R)</div>
         <div class="card-body">
           <canvas id="costChart" height="200"></canvas>
         </div>
@@ -600,7 +601,7 @@
     <!-- Delay Risk Chart -->
     <div class="col-md-12 mb-4">
       <div class="card shadow-sm">
-        <div class="card-header bg-warning text-dark">Delay Risk Index</div>
+        <div class="card-header custom-red text-white">Delay Risk Index</div>
         <div class="card-body">
           <canvas id="delayRiskChart" height="120"></canvas>
         </div>
@@ -683,8 +684,8 @@
         datasets: [{
           label: 'Route Score',
           data: [74, 78, 80, 77, 82, 81, 83],
-          borderColor: 'blue',
-          backgroundColor: 'rgba(0, 0, 255, 0.1)',
+          borderColor: 'lightgrey',
+          backgroundColor: 'lightgrey',
           fill: true,
           tension: 0.4
         }]
@@ -704,7 +705,7 @@
         datasets: [{
           label: 'Cost (R)',
           data: [2.65, 2.57, 2.50, 2.48, 2.46, 2.45, 2.43],
-          backgroundColor: 'green'
+          backgroundColor: '#a10d00'
         }]
       },
       options: {
@@ -722,8 +723,8 @@
         datasets: [{
           label: 'Delay Risk',
           data: [3, 2, 2, 2, 1, 1, 1],
-          borderColor: 'orange',
-          backgroundColor: 'rgba(255,165,0,0.3)',
+          borderColor: 'lightgrey',
+          backgroundColor: 'lightgrey',
           fill: true,
           tension: 0.4
         }]

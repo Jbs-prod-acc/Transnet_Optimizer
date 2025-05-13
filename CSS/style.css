@@ -1,18 +1,36 @@
+:root {
+    --transnet-green: #fdfdfd;
+    /* Transnet green */
+    --transnet-red: #E31937;
+    /* Transnet red */
+    --transnet-white: #FFFFFF;
+            /* White */
+    --transnet-dark: #333333;
+            /* Dark gray */
+    --transnet-light: #F5F5F5;
+            /* Light gray */
+  }
+
 
 body {
     background-color: #f0f2f5;
+    background-image: url('./images/back.png');
+     background-color: var(--transnet-light);
   }
 
   .sidebar {
-    background-color: black;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.384);
+    color: rgb(25, 23, 23);;
     min-height: 100vh; 
     height: auto;
-    overflow-y: auto; 
+    overflow-y: auto;
+    transition: all 0.3s;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); 
   }
 
   .sidebar a {
-    color: white;
+    color: rgb(53, 52, 52);
     text-decoration: none;
   }
 
@@ -36,15 +54,15 @@ body {
 
 
   .sidebar .nav-link {
-    color: white !important;
+    color: rgb(53, 52, 52); !important;
     padding-left: 0.5rem;
     transition: background-color 0.2s ease;
     
   }
   
   .sidebar .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffc107 !important; 
+    background-color: #a10d00;
+    color: white !important; 
   }
 
   .sidebar .nav-link.active {
@@ -81,7 +99,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     padding: 12px 20px;
-    border-left: 6px solid #0d6efd;
+    border-left: 6px solid #E31937;
     background-color: #f8f9fa;
     color: #333;
     margin-bottom: 1.5rem;
@@ -114,6 +132,12 @@ body {
       color: #ffc107 !important;
     }
   }
+
+  .custom-red {
+  background-color: #a10d00;
+  color: white;
+}
+
   
   
   
